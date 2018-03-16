@@ -2,6 +2,10 @@ from flask import Flask, redirect, url_for, request,current_app
 import urllib 
 app = Flask(__name__)
 #method to send messages
+@app.route('/')
+def route():
+    return  current_app.send_static_file('sms.html')
+
 @app.route('/messages')
 def messages():
     password = request.args.get('password')
