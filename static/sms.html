@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <title>GVP_MCA</title>
+      <script>
+      var password = prompt("Enter Your Passwod:" );
+      </script>
+    <style>
+      .text_box{
+          width: 70%;
+             padding: 1em;
+             border: 1px solid #c9e6ff;
+        }
+        .box{
+            border-radius: 10%;
+            background-color: 	#2F4F4F;
+            width: 600px;
+            height: 370px;
+            border: 15px solid grey;
+            padding: 20px;
+            box-shadow: 10px 10px 5px #AAAAAA;
+            margin: 25px;
+        }
+        #Pad{
+          padding-top: 100px;
+        }
+        .look{
+          font-size: 30px;
+          color:#33FFF9;
+          font-family:inherit;
+        }
+        .css_button{
+          background-color:#85adad;
+          border: none;
+          color: white;
+          width:35%;
+          padding: 25px 35px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+        }
+    </style>
+  </head>
+  <body>
+  <div align="center" id="Pad">
+      <div class="box" align="center">
+        <p class="look"><b>GVP MCA</b></p>
+        <table>
+          <tr>
+            <td><label for="password" style="color:white"><b>Password :</b></label></td>
+            <td><input class="text_box" id="password" type="password" name="" value=""></td>
+          </tr>
+          <tr>
+            <td><label for="mobile" style="color:white"><b>Mobile :</b></label></td>
+            <td><input class="text_box" id="mobile" type="text" name="" value=""placeholder="Ex : 9999999999,9999999999,9999999999"></td>
+          </tr>
+          <tr>
+            <td><label for="message" style="color:white"><b>Message :</b></label></td>
+            <td><textarea class ="text_box" id="message" name="name" rows="8" cols="50" placeholder="Enter Your Message"></textarea></td>
+          </tr>
+    </table>
+    <button class="css_button" id="send" type="button" name="button">Send</button>
+    </div>
+    </div>
+  </body>
+    <script>
+        $("#send").click(function(){
+        var user_data = {'mobile':$('#mobile').val(),'message':$('#message').val(),'password':$('#password').val()};
+        $.get("../messages",user_data,function(data,status){
+            alert(data);
+        });
+    });
+    </script>
+</html>
