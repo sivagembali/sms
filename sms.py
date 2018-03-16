@@ -9,7 +9,7 @@ def route():
 @app.route('/messages')
 def messages():
     password = request.args.get('password')
-    if(password == 'true'):
+    if(password == 'gvpmca'):
         mobiles = request.args.get('mobile')
         message = request.args.get('message')
         authkey = "180622Acufr0Tf6Fg559ef6f69" # Your authentication key.
