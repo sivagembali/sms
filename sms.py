@@ -12,7 +12,7 @@ def messages():
     if(password == 'gvpmca'):
         mobiles = request.args.get('mobile')
         message = request.args.get('message')
-        authkey = "203564APQ8NtYrE15aacdff2" # Your authentication key.
+        authkey = "203564Aaey98NXh8L5aace441" # Your authentication key.
         #mobiles = "9705707580,8978098160" # Multiple mobiles numbers separated by comma.
         #message = "Status Demo" # Your message to send.
         sender = "MSGIND" # Sender ID,While using route4 sender id should be 6 characters long.
